@@ -229,12 +229,12 @@ async function otpToTone(){
 	
 	
 	//playSound("triangle",440,6.0,650,1.0,700,2.0,800,3.0,700,4.0,650,5.0,440,6.0);
-	playTone(tone[toneObj[0]],"sine",5.0);
-	 <!-- for (x in toneObj) {  -->
-		 <!-- playTone(tone[toneObj[x]],"sine",0.5);  -->
-		 <!-- await sleep(200);  -->
+	//playTone(tone[toneObj[0]],"sine",5.0);
+	 for (x in toneObj) { 
+		 playTone(tone[toneObj[x]],"sine",0.5); 
+		 await sleep(200); 
 		
-	 <!-- }  -->
+	 } 
 	return false;
 }
 function sleep(ms) {
