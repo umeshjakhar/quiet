@@ -223,7 +223,7 @@ async function otpToTone(){
     var otp = this["otp"].value;
 	var toneObj = [];
 	for (i = 0; i < otp.length; i++) {
-	     toneObj[i] = parseInt(otp.charAt(i))*(1000.00);
+	     toneObj[i] = parseInt(otp.charAt(i))*(500.00);
 		//toneObj[i] = digitToTone(otp.charAt(i));
 		
 	}
@@ -515,9 +515,9 @@ function updatePitch( time ) {
 	rafID = window.requestAnimationFrame( updatePitch );
 	var note = noteFromPitch(ac);
 	pitchElem.innerHTML = ac;
-	noteElem.innerHTML = Math.round(ac/1000);
+	noteElem.innerHTML = Math.round(ac/500);
 	//console.log(buf);
-	console.log(Math.round(ac/1000));
+	console.log(Math.round(ac/500));
 }
 			
 	
