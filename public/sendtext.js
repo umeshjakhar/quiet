@@ -34,7 +34,7 @@ var TextTransmitter = (function() {
 
     function onQuietReady() {
         var profilename = document.querySelector('[data-quiet-profile-name]').getAttribute('data-quiet-profile-name');
-		
+		console.log(profilename);
         transmit = Quiet.transmitter({profile: profilename, onFinish: onTransmitFinish});
         btn.addEventListener('click', onClick, false);
 		console.log("Sender ready");

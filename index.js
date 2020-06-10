@@ -2,16 +2,22 @@ var server = require('diet');
 
 var app = server();
 
-app.get('/', function($){ $.sendFile('./public/index.html') })
-app.post('/upload', function($){ $.end('multipart: ' + $.multipart) })
+app.get('/', function($){ 
+
+$.sendFile('./public/index.html')
+
+
+
+})
+//app.post('/upload', function($){ $.end('multipart: ' + $.multipart) })
 
 app.header(function($){
-    console.log({
-        url: $.url,
-        method: $.method,
-        body: $.body,
-        multipart: $.multipart
-    });
+    // console.log({
+        // url: $.url,
+        // method: $.method,
+        // body: $.body,
+        // multipart: $.multipart
+    // });
 
     $.header('Access-Control-Allow-Origin', '*');
     $.header('Access-Control-Allow-Headers', 'Content-Type');

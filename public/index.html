@@ -269,6 +269,10 @@ window.onload = function() {
 	
 	pitchElem = document.getElementById( "pitch" );
 	noteElem = document.getElementById( "note" );
+	var prof = getParam("p");
+	if(prof==null){prof = "audible";}
+	
+	document.querySelector('[data-quiet-profile-name]').setAttribute('data-quiet-profile-name',prof)
 
 }
 
