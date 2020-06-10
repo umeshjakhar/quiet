@@ -223,7 +223,7 @@ async function otpToTone(){
     var otp = this["otp"].value;
 	var toneObj = [];
 	for (i = 0; i < otp.length; i++) {
-	     toneObj[i] = parseInt(otp.charAt(i))*(500.00);
+	     toneObj[i] = parseInt(otp.charAt(i))*(200.00);
 		//toneObj[i] = digitToTone(otp.charAt(i));
 		
 	}
@@ -233,7 +233,7 @@ async function otpToTone(){
 	//playTone(tone[toneObj[0]],"sine",5.0);
 	 for (x in toneObj) { 
 		 //playTone(tone[toneObj[x]],"sine",3.0);
-			playTone(toneObj[x],"sine",5.0);
+			playTone(toneObj[x],"square",5.0);
 		 await sleep(5000); 
 		
 	 } 
@@ -515,9 +515,9 @@ function updatePitch( time ) {
 	rafID = window.requestAnimationFrame( updatePitch );
 	var note = noteFromPitch(ac);
 	pitchElem.innerHTML = ac;
-	noteElem.innerHTML = Math.round(ac/500);
+	noteElem.innerHTML = Math.round(ac/200);
 	//console.log(buf);
-	console.log(Math.round(ac/500));
+	console.log(Math.round(ac/200));
 }
 			
 	
