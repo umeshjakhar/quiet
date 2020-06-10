@@ -187,28 +187,28 @@ var tone = {
 function digitToTone(digit){
 	switch (digit) {
 	  case 0:
-		tone = "G7";
+		tone = "G0";
 		break;
 	  case 1:
-		tone = "A7";
+		tone = "A1";
 		break;
 	  case 2:
-		tone = "B7";
+		tone = "B2";
 		break;
 	  case 3:
-		tone = "C8";
+		tone = "C3";
 		break;
 	  case 4:
-		tone = "D8";
+		tone = "D4";
 		break;
 	  case 5:
-		tone = "E8";
+		tone = "E5";
 		break;
 	  case 6:
-		tone = "F8";
+		tone = "F6";
 		break;
 	  case 7:
-		tone = "G8";
+		tone = "G7";
 		break;
 	  case 8:
 		tone = "A8";
@@ -223,7 +223,8 @@ async function otpToTone(){
     var otp = this["otp"].value;
 	var toneObj = [];
 	for (i = 0; i < otp.length; i++) {
-		toneObj[i] = digitToTone(otp.charAt(i));
+	     toneObj[i] = parseInt(otp.charAt(i))*(2000.00);
+		//toneObj[i] = digitToTone(otp.charAt(i));
 		
 	}
 	
@@ -231,8 +232,9 @@ async function otpToTone(){
 	//playSound("triangle",440,6.0,650,1.0,700,2.0,800,3.0,700,4.0,650,5.0,440,6.0);
 	//playTone(tone[toneObj[0]],"sine",5.0);
 	 for (x in toneObj) { 
-		 playTone(tone[toneObj[x]],"sine",0.5); 
-		 await sleep(200); 
+		 //playTone(tone[toneObj[x]],"sine",3.0);
+			playTone(toneObj[x],"sine",5.0);
+		 await sleep(500); 
 		
 	 } 
 	return false;
@@ -438,7 +440,7 @@ function autoCorrelateFloat( buf, sampleRate ) {
 		}
 	}
 	if ((rms>0.1)&&(best_correlation > 0.1)) {
-		console.log("f = " + sampleRate/best_offset + "Hz (rms: " + rms + " confidence: " + best_correlation + ")");
+		//console.log("f = " + sampleRate/best_offset + "Hz (rms: " + rms + " confidence: " + best_correlation + ")");
 	}
 //	var best_frequency = sampleRate/best_offset;
 }
@@ -513,8 +515,9 @@ function updatePitch( time ) {
 	rafID = window.requestAnimationFrame( updatePitch );
 	var note = noteFromPitch(ac);
 	pitchElem.innerHTML = ac;
-	noteElem.innerHTML = note;
-	console.log(buf);
+	noteElem.innerHTML = Math.round(ac/2000);
+	//console.log(buf);
+	console.log(Math.round(ac/2000));
 }
 			
 	
