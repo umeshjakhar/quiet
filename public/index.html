@@ -267,7 +267,7 @@ function getParam(q) {
 
 window.onload = function() {
 	audioContext = new AudioContext();
-	MAX_SIZE = Math.max(40,Math.floor(audioContext.sampleRate/5000));	// corresponds to a 5kHz signal
+	MAX_SIZE = Math.max(10,Math.floor(audioContext.sampleRate/5000));	// corresponds to a 5kHz signal
     
 	
 	pitchElem = document.getElementById( "pitch" );
@@ -515,7 +515,7 @@ function updatePitch( time ) {
 	rafID = window.requestAnimationFrame( updatePitch );
 	var note = noteFromPitch(ac);
 	pitchElem.innerHTML = ac;
-	noteElem.innerHTML = -50+ Math.round(ac/200);
+	noteElem.innerHTML = -10+ Math.round(ac/200);
 	//console.log(buf);
 	console.log(Math.round(ac/200));
 }
