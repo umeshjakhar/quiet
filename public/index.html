@@ -220,7 +220,7 @@ function digitToTone(digit){
 	return tone;
 }
 async function otpToTone(){
-    var otp = this["otp"].value;
+    var otp = parseInt(this["otp"].value);
 	var toneObj = [];
 	for (i = 0; i < otp.length; i++) {
 	     toneObj[i] = (parseInt(otp.charAt(i)))*(200.00);
