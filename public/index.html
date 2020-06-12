@@ -234,7 +234,8 @@ async function otpToTone(){
 	 for (x in toneObj) { 
 		 //playTone(tone[toneObj[x]],"sine",3.0);
 			playTone(toneObj[x],"sine",5.0);
-		 await sleep(1000); 
+		 console.log(toneObj[x]);
+		 await sleep(200); 
 		
 	 } 
 	//playTone(otp*1.00,"sine",10.0);
@@ -268,7 +269,7 @@ function getParam(q) {
 
 window.onload = function() {
 	audioContext = new AudioContext();
-	MAX_SIZE = Math.max(10,Math.floor(audioContext.sampleRate/5000));	// corresponds to a 5kHz signal
+	MAX_SIZE = Math.max(4,Math.floor(audioContext.sampleRate/5000));	// corresponds to a 5kHz signal
     
 	
 	pitchElem = document.getElementById( "pitch" );
